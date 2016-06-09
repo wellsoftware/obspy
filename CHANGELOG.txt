@@ -5,6 +5,9 @@
  - obspy.db:
    * Fixed a bug in obspy-indexer command line script (see #1369,
      command line script was not working, probably since 0.10.0)
+ - obspy.io.gse2:
+   * Fixed a bug that could lead to network code not present in GSE2 output
+     (see #1448)
  - obspy.io.mseed:
    * Fixed a bug in obspy-mseed-recordanalyzer (see #1386)
  - obspy.io.nlloc:
