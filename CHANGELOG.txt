@@ -24,6 +24,9 @@
  - obspy.signal:
    * PPSD.plot(): fix plotting of percentiles, mode and mean and setting
      period limits when using "xaxis_frequency=True" (see #1406, #1416)
+   * work around a bug in scipy that results in wrong results for bandpass
+     filter when using Nyquist frequency (or higher) as high corner of the
+     passband (see #1451)
 
 1.0.1: (doi: 10.5281/zenodo.48254)
  - General:
