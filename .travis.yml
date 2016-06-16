@@ -157,6 +157,9 @@ script:
   - echo $MODULELIST
   - export MODULELIST="obspy.clients.filesystem,obspy.core,obspy.db"
   - echo $MODULELIST
+  - echo $TRAVIS_REPO_SLUG
+  - echo $TRAVIS_JOB_ID
+  - echo $RUNTESTOPTIONS
   - coverage run --rcfile=.coveragerc --source=obspy.clients.filesystem,obspy.core,obspy.db -m obspy.scripts.runtests -n travis-ci -r
 
 after_success:
