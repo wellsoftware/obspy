@@ -155,6 +155,8 @@ script:
   - cd empty
   - export MODULELIST=`python -c "from obspy.core.util import DEFAULT_MODULES as MODULES; print('obspy.' + ',obspy.'.join(MODULES))"`
   - echo $MODULELIST
+  - export MODULELIST="obspy.clients.filesystem,obspy.core,obspy.db"
+  - echo $MODULELIST
   - coverage run --rcfile=.coveragerc --source=$MODULELIST -m obspy.scripts.runtests -n travis-ci -r $RUNTESTSOPTIONS
 
 after_success:
