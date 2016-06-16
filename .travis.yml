@@ -147,10 +147,10 @@ script:
   - cd empty
   - export MODULELIST=`python -c "from obspy.core.util import DEFAULT_MODULES as MODULES; print('obspy.' + ',obspy.'.join(MODULES))"`
   - if [[ "$TRAVIS_PULL_REQUEST" == "false" ]]; then
-      echo "yay"
+      echo "yay";
     else
-      echo "nay"
-    fi
+      echo "nay";
+    fi;
   - exit 1
   # - coverage run --rcfile=.coveragerc --source=${MODULELIST} -m obspy.scripts.runtests -n travis-ci -r ${RUNTESTSOPTIONS}
 
