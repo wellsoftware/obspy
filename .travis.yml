@@ -157,7 +157,7 @@ script:
   - echo $MODULELIST
   - export MODULELIST="obspy.clients.filesystem,obspy.core,obspy.db"
   - echo $MODULELIST
-  - coverage run --rcfile=.coveragerc --source=obspy.clients.filesystem,obspy.core,obspy.db -m obspy.scripts.runtests -n travis-ci -r $RUNTESTSOPTIONS
+  - coverage run --rcfile=.coveragerc --source=obspy.clients.filesystem,obspy.core,obspy.db -m obspy.scripts.runtests -n travis-ci -r
 
 after_success:
   - mv .coverage ../.coverage.empty
