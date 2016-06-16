@@ -146,12 +146,13 @@ script:
   - mkdir empty
   - cd empty
   - export MODULELIST=`python -c "from obspy.core.util import DEFAULT_MODULES as MODULES; print('obspy.' + ',obspy.'.join(MODULES))"`
-  - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
+  - if [[ "$TRAVIS_PULL_REQUEST" == "false" ]]; then
       echo "yay"
     else
       echo "nay"
     fi
-  - coverage run --rcfile=.coveragerc --source=${MODULELIST} -m obspy.scripts.runtests -n travis-ci -r ${RUNTESTSOPTIONS}
+  - exit 1
+  # - coverage run --rcfile=.coveragerc --source=${MODULELIST} -m obspy.scripts.runtests -n travis-ci -r ${RUNTESTSOPTIONS}
 
 after_success:
   - mv .coverage ../.coverage.empty
