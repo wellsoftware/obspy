@@ -151,6 +151,9 @@ script:
     else
       export RUNTESTSOPTIONS="--ci-url https://travis-ci.org/${TRAVIS_REPO_SLUG}/jobs/${TRAVIS_JOB_ID} --pr-url https://github.com/obspy/obspy/pull/${TRAVIS_PULL_REQUEST}";
     fi;
+  - echo $MODULELIST
+  - echo $RUNTESTSOPTIONS
+  - echo "coverage run --rcfile=.coveragerc --source=${MODULELIST} -m obspy.scripts.runtests -n travis-ci -r ${RUNTESTSOPTIONS}"
   - coverage run --rcfile=.coveragerc --source=${MODULELIST} -m obspy.scripts.runtests -n travis-ci -r ${RUNTESTSOPTIONS}
 
 after_success:
